@@ -37,4 +37,11 @@ fun Play(modifier: Modifier = Modifier) {
         text = "樂透數字(1-100)為 $lucky"
         //modifier = modifier
     )
+
+    Button(
+        onClick = {lucky = (1..100).random()}
+    )
+    {
+        Text("重新產生樂透碼")
+    }
 }
