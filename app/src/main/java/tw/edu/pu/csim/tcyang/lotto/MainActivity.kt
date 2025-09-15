@@ -35,6 +35,6 @@ fun Play(modifier: Modifier = Modifier) {
 
     Text(
         text = "樂透數字(1-100)為 $lucky"
-        //modifier = modifier
+        modifier = modifier
     )
 }
