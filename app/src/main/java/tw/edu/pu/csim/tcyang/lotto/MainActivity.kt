@@ -20,8 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             LottoTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    Play(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -31,17 +30,11 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+fun Play(modifier: Modifier = Modifier) {
+    var lucky = (1..100).random()
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    LottoTheme {
-        Greeting("Android")
-    }
+    Text(
+        text = "樂透數字(1-100)為 $lucky"
+        //modifier = modifier
+    )
 }
