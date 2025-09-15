@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import tw.edu.pu.csim.tcyang.lotto.ui.theme.LottoTheme
 import android.widget.Button
+import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Button
 
 class MainActivity : ComponentActivity() {
@@ -35,15 +36,17 @@ class MainActivity : ComponentActivity() {
 fun Play(modifier: Modifier = Modifier) {
     var lucky = (1..100).random()
 
-    Text(
-        text = "樂透數字(1-100)為 $lucky"
-        //modifier = modifier
-    )
+    Column (modifier = modifier) {
+        Text(
+            text = "樂透數字(1-100)為 $lucky",
+            modifier = modifier
+        )
 
-    Button(
-        onClick = {lucky = (1..100).random()}
-    )
-    {
-        Text("重新產生樂透碼")
+        Button(
+            onClick = { lucky = (1..100).random() }
+        )
+        {
+            Text("重新產生樂透碼")
+        }
     }
 }
